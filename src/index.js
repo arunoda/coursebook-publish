@@ -64,6 +64,7 @@ ${toArgs(l, 8)}
   const all = [...courseMutations, ...lessionMutations].join('\n')
   return `
     mutation {
+      removeAll
       ${all}
     }
   `
