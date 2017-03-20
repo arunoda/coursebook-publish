@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+const { resolve } = require('path')
+const publish = require('../src/index')
+
+const rootUrl = process.argv[2]
+const adminToken = process.argv[3]
+const dataDir = resolve(process.argv[4] || '.')
+
+publish(rootUrl, adminToken, dataDir)

@@ -1,0 +1,24 @@
+{
+  "name": "coursebook-publish",
+  "version": "1.0.0",
+  "description": "Publish lessons into coursebook",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "coursebook-publish": "./bin/publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arunoda/coursebook-publish.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arunoda/coursebook-publish/issues"
+  },
+  "homepage": "https://github.com/arunoda/coursebook-publish#readme",
+  "dependencies": {
+    "node-fetch": "^1.6.3"
+  }
+}
