@@ -1,6 +1,6 @@
 {
   "name": "coursebook-publish",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Publish lessons into coursebook",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/arunoda/coursebook-publish#readme",
   "dependencies": {
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^2.3.0"
   }
 }
