@@ -15,6 +15,8 @@ module.exports = function publish (serverUrl, adminToken, dataDir) {
 
   fetch(url, options)
     .then((res) => res.json())
+    // .then(res => res.text())          // convert to plain text
+    // .then(text => console.log(text))  // then log it out
     .then((res) => console.log(JSON.stringify(res, null, 2)))
     .catch((ex) => console.log(ex.stack))
 }
