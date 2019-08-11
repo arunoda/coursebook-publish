@@ -3,7 +3,9 @@ const path = require('path')
 const fetch = require('node-fetch')
 
 module.exports = function publish (serverUrl, adminToken, dataDir) {
-  const query = buildQuery(dataDir)
+  const query = buildQuery(dataDir);
+
+  //console.log(query);
   const url = `${serverUrl}/graphql?adminToken=${adminToken}`
   const options = {
     method: 'post',
@@ -13,9 +15,15 @@ module.exports = function publish (serverUrl, adminToken, dataDir) {
     })
   }
 
+  //return console.log(url);
+
   fetch(url, options)
     .then((res) => res.json())
-    .then((res) => console.log(JSON.stringify(res, null, 2)))
+    // .then(res => res.text())          // convert to plain text
+    // .then(text => console.log(text))  // then log it out
+    .then((res) => {
+      console.log(JSON.stringify(res, null, 2))
+    })
     .catch((ex) => console.log(ex.stack))
 }
 
@@ -37,6 +45,28 @@ function loadLessions (dataDir, course) {
 
   return lessonList
 }
+function loadLessionsWithSubLessons(dataDir, course) {
+  try{
+    const courseDir = `${course.position}-${course.id}`
+    var absoluteCourseDir = path.join(dataDir ,courseDir)
+    const lessions = getFsList(absoluteCourseDir, { onlyDirs: true });
+    
+    const lessonList = [];
+    lessions.forEach((objLession)=>{
+      var lessionDirName = `${objLession.position }-${objLession.id}`;
+      var subLessionList = getFsList(path.join(absoluteCourseDir, lessionDirName), { onlyFiles: true });
+      subLessionList.forEach(({position, id, name})=>{
+        const data= require(path.join(absoluteCourseDir, lessionDirName, `${position}-${id}.js`));
+        lessonList.push(Object.assign({ id, position, courseId: course.id, moduleName: name,  moduleId: objLession.id  }, data));
+      })
+    });
+  
+    return lessonList
+  }
+  catch(ex){
+    console.log(ex);
+  }
+}
 
 function buildQuery (dataDir) {
   const courses = loadCourses(dataDir)
@@ -47,13 +77,15 @@ ${toArgs(c, 8)}
       ) { id }
     `
   })
-
+  
   let lessons = []
   courses.forEach((c) => {
-    loadLessions(dataDir, c).map((l) => lessons.push(l))
+    loadLessionsWithSubLessons(dataDir, c).map((l) => lessons.push(l)) // HMD 190811
   })
+  //console.log('found coruse: ', lessons);
 
   const lessionMutations = lessons.map((l, i) => {
+
     return `
       l${i}: createLesson(
 ${toArgs(l, 8)}

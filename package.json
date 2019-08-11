@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arunoda/coursebook-publish.git"
+    "url": "git+https://github.com/becloudgenius/coursebook-publish.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arunoda/coursebook-publish/issues"
+    "url": "https://github.com/becloudgenius/coursebook-publish/issues"
   },
-  "homepage": "https://github.com/arunoda/coursebook-publish#readme",
+  "homepage": "https://github.com/becloudgenius/coursebook-publish#readme",
   "dependencies": {
-    "node-fetch": "^1.6.3"
+    "node-fetch": "2.6.0"
   }
 }
