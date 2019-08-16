@@ -74,7 +74,7 @@ function loadLessionsWithSubLessons(dataDir, course) {
               id,
               position,
               courseId: course.id,
-              moduleName: name,
+              moduleName: createModuleNameFromModuleId(objLession.id),
               moduleId: objLession.id
             },
             data
@@ -87,6 +87,15 @@ function loadLessionsWithSubLessons(dataDir, course) {
   } catch (ex) {
     console.log(ex);
   }
+}
+
+function createModuleNameFromModuleId(moduleId) {
+  return moduleId
+    .split("-")
+    .map(item => {
+      return item[0].toUpperCase() + item.slice(1);
+    })
+    .join(" ");
 }
 
 function buildQuery(dataDir) {
