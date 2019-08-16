@@ -1,6 +1,6 @@
 {
   "name": "coursebook-publish",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Publish lessons into coursebook",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/arunoda/coursebook-publish.git"
+    "url": "git+https://github.com/becloudgenius/coursebook-publish.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/arunoda/coursebook-publish/issues"
+    "url": "https://github.com/becloudgenius/coursebook-publish/issues"
   },
-  "homepage": "https://github.com/arunoda/coursebook-publish#readme",
+  "homepage": "https://github.com/becloudgenius/coursebook-publish#readme",
   "dependencies": {
-    "node-fetch": "^2.3.0"
+    "node-fetch": "2.6.0"
   }
 }
