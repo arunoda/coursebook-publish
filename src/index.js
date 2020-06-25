@@ -22,7 +22,9 @@ module.exports = function publish(serverUrl, adminToken, dataDir) {
     // .then(res => res.text())          // convert to plain text
     // .then(text => console.log(text))  // then log it out
     .then(res => {
+    if (process.env.NODE_ENV !== "production") {
       console.log(JSON.stringify(res, null, 2));
+    }
     })
     .catch(ex => console.log(ex.stack));
 };
