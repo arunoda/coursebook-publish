@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Publish lessons into coursebook",
   "scripts": {
+    "clean": "rm -rf node_modules yarn.lock package-lock.json",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
@@ -19,6 +20,6 @@
   },
   "homepage": "https://github.com/becloudgenius/coursebook-publish#readme",
   "dependencies": {
-    "node-fetch": "2.6.0"
+    "node-fetch": "2.6.1"
   }
 }
