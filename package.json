@@ -1,25 +1,25 @@
 {
-  "name": "coursebook-publish",
-  "version": "1.0.0",
-  "description": "Publish lessons into coursebook",
-  "scripts": {
-    "clean": "rm -rf node_modules yarn.lock package-lock.json",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "coursebook-publish": "./bin/publish"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/becloudgenius/coursebook-publish.git"
-  },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/becloudgenius/coursebook-publish/issues"
-  },
-  "homepage": "https://github.com/becloudgenius/coursebook-publish#readme",
-  "dependencies": {
-    "node-fetch": "3.0.0"
-  }
+	"name": "coursebook-publish",
+	"version": "1.0.0",
+	"description": "Publish lessons into coursebook",
+	"scripts": {
+		"clean": "rm -rf node_modules yarn.lock package-lock.json",
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"bin": {
+		"coursebook-publish": "./bin/publish"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/becloudgenius/coursebook-publish.git"
+	},
+	"author": "",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/becloudgenius/coursebook-publish/issues"
+	},
+	"homepage": "https://github.com/becloudgenius/coursebook-publish#readme",
+	"dependencies": {
+		"node-fetch": "3.0.0"
+	}
 }
